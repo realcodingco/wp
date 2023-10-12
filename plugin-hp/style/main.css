@@ -1,0 +1,605 @@
+:root{
+    --main: green;
+    /* #2C5592; */
+    --sub: rgb(126, 172, 126);
+    --main_dark: #204c8f;
+}
+.header {
+    width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(252, 252, 243, 0.6);
+    box-shadow: 0;
+    z-index: 10;
+}
+.header.down {
+    box-shadow: 0 0 7px rgba(0,0,0,.1);
+}
+.header span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: table-cell;
+    vertical-align: middle;
+    color: black;
+    font-size: 20px;
+    line-height: 55px;
+}
+li.menuTitle a{
+    text-decoration: none;
+    /* padding: 20px; */
+    margin: 20px;
+    font-size: 17px;
+    color: black;
+}
+li.menuTitle a:hover {
+    border-bottom: 3px solid var(--main);
+    transform: scale(1.1);
+    color: var(--main);
+    font-weight: bold; 
+}
+
+.menuIcon{
+    width: 24px;
+    height: 18px;
+    margin: 30px 20px;
+    float: right;
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+.menuIcon span:nth-child(1) {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+.menuIcon span:nth-child(2) {
+    position: absolute;
+    top: 7px;
+    width: 75%;
+    margin-left: 25%;
+    height: 3px;
+    background-color: black;
+}
+.menuIcon span:nth-child(3) {
+    position: absolute;
+    top: 14px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.menuTrigger {
+    /* margin-right: 70px;
+    margin-bottom: 50px; */
+    display: none;
+    position: absolute !important;
+    right:30px;
+    top: 30px;
+}
+.menuTrigger,
+.menuTrigger span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+}
+
+.menuTrigger {
+    position: relative;
+    width: 34px;
+    height: 30px;
+    display: none;
+}
+
+.menuTrigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    border-radius: 4px;
+}
+
+.menuTrigger span:nth-of-type(1) {
+    top: 0;
+}   
+
+.menuTrigger span:nth-of-type(2) {
+    top: 12px;
+}
+
+.menuTrigger span:nth-of-type(3) {
+    bottom: 0;
+}
+.menuTrigger.active span:nth-of-type(1) {
+    -webkit-transform: translateY (13px) rotate (-45deg);
+    transform: translateY(13px) rotate(-45deg);
+}
+
+.menuTrigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menuTrigger.active span:nth-of-type(3) {
+    -webkit-transform: translateY(-13px) rotate(45deg);
+    transform: translateY(-13px) rotate(45deg);
+}
+  
+
+ul.menuBox {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    height: auto;
+    width: auto;
+    display: flex;
+    padding: 20px;
+    /* font-family: Montserrat; */
+    font-weight: 300;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+ul.menuBox.clicked {
+    width:100%;
+    display: flex;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    flex-direction: column;
+    line-height: 40px;
+}
+.spreadBox {
+    box-shadow : 0 0 1.5em -0.5em rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    /* display: flex; */
+    width: 85%;
+    margin: 20px auto;
+    transition: all 0.5s ease-out;
+    overflow: hidden;
+}
+.spreadBox p {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+    padding: 20px;
+    border-top: 4px solid var(--main);
+}
+.spreadBox p:nth-child(1) {
+    color: var(--main);
+    font-weight: 500;
+    text-align: left;
+    /* margin-bottom: 10px; */
+}
+.spreadBox span {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20%;
+    right: 0px;
+    font-weight: bold;
+    color: var(--main);
+    /* border: 1px solid var(--main); */
+    border-radius: 40px;
+    padding: 7px;
+    /* margin-top: 25px; */
+}
+.spreadBox span.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
+.spreadBox div:nth-child(2) {
+    padding: 20px;
+    /* height: 200px; */
+    text-align: left;
+    width: 100%;
+}
+.spreadBox:hover {
+    background: var(--main);
+}
+.spreadBox:hover p {
+    color: white;
+}
+.spreadBox:hover span {
+    color: white;
+    border-color: white;
+}
+.detailBox {
+    display: none;
+    width: 100%;
+    height: auto;
+    border-bottom: 4px solid var(--main);
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: left;
+    background: white;
+    text-align: justify;
+    word-break: keep-all;
+}
+.tableWrap {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    margin: 90px auto 30px auto;
+}
+#price {
+    padding: 150px 0px;
+    text-align: center;
+    background-color: #f6f6f6;
+    background-image:
+    linear-gradient(rgba(255,255,255,.6) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.6) 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+.priceTable {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 40px 0px;
+}
+.priceTable :nth-child(2) {
+    font-weight: bold;
+    color: var(--main);
+    width: 100%;
+}
+.price {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    width: auto;
+}
+.price :nth-child(odd) {
+    font-size: 12px;
+    width: 40px;
+    padding-top: 30px;
+}
+.price :nth-child(even) {
+    font-size: 2.5rem;
+    width: auto;
+}
+.tableWrap .priceTable:nth-child(2) .buy {
+    background-color: var(--main);
+    color: white;
+}
+.tableWrap .priceTable:nth-child(2) .buy:hover {
+    background-color: var(--sub);
+} 
+.tableWrap .priceTable:nth-child(2):before {
+    content: 'POPULAR';
+    display: block;
+    position: absolute;
+    width: 164px;
+    top: -43px;
+    left: calc(50% - 82px);
+    line-height: 43px;
+    background: var(--main);
+    color: white;
+    letter-spacing: 0.06em;
+    padding: 0px 30px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.priceTable :nth-child(4) {
+    padding: 14px;
+    border: 1px solid var(--main);
+    width: 80%;
+    color: var(--main);
+}
+.priceTable :nth-child(4):hover {
+    color:white;
+    background-color: var(--main);
+}
+.priceTitle {
+    text-align: center;
+}
+.priceTitle p:nth-child(2) {
+    font-size: 22px;
+    font-weight: 400;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.themebox {
+    background-image: linear-gradient(20deg, rgb(231, 244, 231) 60%, #fff 60%);
+}
+.themeTitle {
+    margin-top : 50px;
+    color: green;
+    font-size: 4vmin;
+}
+.themebox p {
+    margin: 30px 0px;
+    font-size: 2vmin;
+}
+.themebox img {
+    width: 80%;
+    border: 7px solid rgb(0 0 0 / 10%);
+    margin-top: 50px;
+}
+.dlBtn {
+    display:block;
+    margin: 30px auto;
+    padding: 12px 40px;
+    background: green;
+    color: white;
+    width: 230px;
+    text-decoration: none;
+}
+.dlBtn:hover {
+    background: rgb(83, 155, 83);
+    color: white;
+}
+.feature {
+    text-align: left;
+    width: 80%;
+    padding: 30px 0px;
+}
+.feature :nth-child(2){
+    font-size: 13px;
+    margin: 20px 0px;
+}
+.footer {
+    background: rgb(2, 26, 17);
+    padding: 30px 30px 100px 30px;
+    display: flex;
+    flex-direction: column;
+}
+.footer img{
+    width: 30px;
+    margin-right: 10px;
+}
+.footer div{
+    color: green;
+    display: flex;
+}
+.footer span {
+    float: right;
+    font-size: 10px;
+    color: white;
+    width: 350px;
+    margin-top: 17px;
+}
+.adminTool {
+    padding: 100px 0px;
+    background-image: linear-gradient(-10deg, rgb(211, 193, 254) 55%, #fff 55%, #fff 55.5%, rgb(211, 193, 254) 55.5%, rgb(211, 193, 254) 56%, #fff 56%); 
+}
+.adminTool h2 {
+    color: rgb(140, 26, 217);
+    margin-bottom: 20px;
+}
+.adminTool p{
+    font-size: 13px;
+}
+.adminTool img{
+    width: 80%;
+    border: 7px solid rgb(0 0 0 / 10%);
+    margin: 30px 0px;
+}
+.linebanner {
+    padding: 15px 0px;
+    color: rgb(211, 229, 251);
+    background: #204c8f;
+    font-weight: 300;
+}
+.topbtn {
+    font-size: 40px;
+    text-align: center;
+    border-radius: 100px;
+    position: fixed;
+    right: 30px;
+    bottom: 50px;
+    width: 60px;
+    height: 60px;
+    color: lightgray;
+    border: 1px solid lightgray;
+    display: none;
+}
+.topbtn a {
+    text-decoration: none;
+    color: lightgray;
+}
+.topbtn a:hover {
+    color: lightgray;
+}
+.checkout {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top:0;
+    background-color: #f6f6f6;
+    background-image:
+    linear-gradient(rgba(255,255,255,.6) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(255,255,255,.6) 2px, transparent 2px),
+    linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px);
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+}
+.checkout > :nth-child(1) {
+    font-size: 25px;
+    text-align: center;
+    padding: 25px 0px;
+    color: var(--main);
+}
+.checkout > :nth-child(2) {
+    width: auto;
+    position: fixed;
+    right: 20px;
+    top: 0;
+    font-size: 30px;
+    margin: 20px;
+}
+.billing {
+    width: 90%;
+    height: 80%;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: white;
+    margin-left:calc((90% / 2) * -1);
+    margin-top: calc((80vh / 2) * -1);
+    padding: 40px;
+}
+.rowBox{
+    padding: 15px 10px;
+}
+.discount {
+    padding: 10px;
+    display: flex;
+    border-bottom: .0625rem solid #d5d8dc;
+}
+.discount > :nth-child(1) {
+    width: 150px;
+    margin-right: 10px;
+    padding: 7px 0px;
+}
+.discount input {
+    border-radius: 0px;
+    width: 280px;
+    height: 40px;
+    padding: 5px;
+    border: .0625rem solid #d5d8dc;
+}
+.discount input:focus{
+    outline: none;
+}
+.discount input.warn {
+    border-color: red;
+}
+.discount button {
+    width: auto;
+    height: 40px;
+    background: var(--sub);
+    color:white;
+    padding: 5px 10px;
+    border: 0px;
+}
+.discount span{
+    font-size: 10px;
+    color: red;
+    margin-left: 5px;
+    display: none;
+}
+.discountRate {
+    display: none;
+    float: right;
+    width: auto;
+    color: red;
+    font-size: 18px;
+    margin-top: 7px;
+}
+.rowBox{
+    border-bottom: .0625rem solid #d5d8dc;
+}
+.rowBox :nth-child(1) {
+    float: left;
+    font-weight: 600;
+}
+.rowBox :nth-child(2) {
+    float: right;
+    font-weight: 300;
+}
+.totalPrice {
+    font-size: 17px;
+    font-weight: 600 !important;
+    text-align: right;
+}
+.payBtn {
+    width: 100%;
+    height: 40px;
+    background: var(--main);
+    color:white;
+    padding: 5px 10px;
+    border: 0px;
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+/* 트랙 (Track) */
+::-webkit-scrollbar-track {
+    background: rgba(157, 157, 157, 0.2);
+}
+/* 핸들 (Handle) */
+::-webkit-scrollbar-thumb {
+    background: var(--main);
+    width: 8px;
+    height: 20%;
+    border-radius: 10px;
+}
+@media(max-width: 860px) {
+    .tableWrap {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .priceTable {
+        margin: 20px 0px;
+    }
+    .tableWrap .priceTable:nth-child(2) {
+        margin-top: 63px;
+    }
+}
+@media (max-width: 700px) {
+    .capabilityItem {
+        flex-direction: column
+    }
+    .capabilityItem div:nth-child(2) {
+        width: 90%;
+    }
+    .capabilityItemBg div:nth-child(2n) {
+        margin-left: 0px;
+    }
+    .capabilityItem div:nth-child(1) {
+        width: 90px;
+        height: 90px;
+        font-size: 30px;
+    }
+    .gradImg {
+        display: none;
+    }
+    .spreadBox div:nth-child(2) {
+        width: 100%;
+    }
+}
+@media (max-width: 950px) {
+    .capabilityItemBg {
+        position: relative;
+        left:0;
+        width: 90%;
+    }
+    .capaBanner {
+        height: 300px;
+    }
+}
+@media ( max-width: 1040px ) {  /* mobile */
+    ul.menuBox {
+        display: none;
+        position: relative;
+        transform: none;
+    }
+    .menuIcon {
+        display: block;
+    }
+    .menuTrigger {
+        display: block;
+    }
+}
+
+@media ( min-width: 1040px ) {  /* pc */
+
+}

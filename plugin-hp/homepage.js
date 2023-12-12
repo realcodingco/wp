@@ -1,3 +1,4 @@
+const adminEmail = 'help@realcoding.co';
 const homepage = {
     header : {
         menuData : [
@@ -45,16 +46,20 @@ const homepage = {
             ans : 'You can modify and edit the main color of the homepage, the basic menu organization, and the content of the detail pages to your want.'//'홈페이지 메인 컬러, 기본적인 메뉴 구성, 세부 페이지의 내용을 원하는대로 수정하고 편집할 수 있습니다.'
         },
         {
-            que : 'Is a refund available?',//'환불이 가능한가요?',
-            ans : 'Yes. available.<br>You can request a refund at any time <b>within 30 days</b>.'//'네. 가능합니다.\n 30일 이내에 언제든지 환불요청을 할 수 있습니다.'
+            que : 'I want a refund. How do I do that?',//'환불이 가능한가요?',
+            ans : 'Yes. Anytime within 7 days. <br>In [My account] - [Subscription], click the refund button for the item in the payment history list.<br>There are no refunds after 7 days, so keep that in mind.'//'네. 가능합니다.\n 7일 이내에 언제든지 환불요청을 할 수 있습니다. 환불 문의는 '
         },
         {
             que: 'How do I contact you about a theme or plugin?',
-            ans: 'Send us an email with what you\'d like to talk about We\'ll get back to you within 10 business days.<br><i class="fa-regular fa-envelope"></i> help@cellwork.net'
+            ans: `Send us an email with what you\'d like to talk about We\'ll get back to you within 10 business days.<br><i class="fa-regular fa-envelope"></i> ${adminEmail}`
         },
         {
             que: 'I want to commission a theme template, how do I do that?',
-            ans: 'For requests to customize a theme template, please email help@cellwork.net.'
+            ans: `For requests to customize a theme template, please email ${adminEmail}.`
+        },
+        {
+            que: 'What do domain settings mean?',
+            ans: 'After you pay for your plugin subscription, you can set the number of domains for your chosen plan.<br>If it is not a saved domain, the theme and plugin will not work.'
         },
         // {
         //     que: '',
@@ -104,12 +109,13 @@ const homepage = {
             price: 49
         },
         expert : {
-            site: '5+',
+            site: 5,
             price: 69
         },
         agency : {
-            site: '25+',
+            site: 20,
             price: 199
         }
-    }
+    },
+    screatKey: 'bsw3rejg'
 };

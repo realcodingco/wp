@@ -10,7 +10,7 @@ BX.regist('Theme', compData);
  * @returns 헤더 box
  */
 function theme(scheme) {
-    const b = box().paddingTop(100).textAlign('center')//.maxWidth(1200).left('50%').css('transform', 'translate(-50%, 0)');
+    const b = box().paddingTop(100).textAlign('center');
     b[0].id = 'theme';
     BX.component(schemes.themeTitle).appendTo(b).html(scheme.title);
     
@@ -19,6 +19,14 @@ function theme(scheme) {
         let el = BX.component(schemes.themeBox).appendTo(b);
         el.children()[0].textContent = themes[i].name.toUpperCase() + ' THEME';
         el.children()[2].src = themes[i].img;
+
+        getThemepkURL( url => { // 테마 패키지 파일 firestore에서 다운로드 링크 가져오기.
+            console.log(url)
+            if(!url){ 
+                url = 'javascript:toastr.info("Theme packages are being prepared.")';
+            }
+            $(el).find('a')[0].href = url;
+        });
 
         const features = themes[i].feature;
         for(let f=0; f<features.length; f++) {

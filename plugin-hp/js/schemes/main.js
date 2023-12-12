@@ -384,7 +384,7 @@ const subscr = {
                 children: [
                     {
                         kind: 'a',
-                        href: '/plugin-hp#price', //가격 영역으로 바로 가려면?? 
+                        href: '/wp/plugin-hp#price', //가격 영역으로 바로 가려면?? 
                         text: 'Get started'
                     }
                 ]
@@ -617,7 +617,7 @@ const schemes = {
                     {
                         kind: 'a',
                         text: 'My Account',
-                        href: '/plugin-hp/myinfo',
+                        href: '/wp/plugin-hp/myinfo',
                         style: {
                             textDecoration: 'none',
                             color: 'black',
@@ -868,7 +868,7 @@ const schemes = {
             {
                 kind: 'box',
                 onClick: e => { //메인페이지 가격섹션으로 이동
-                    window.location.replace('/plugin-hp#price');
+                    window.location.replace('/wp/plugin-hp#price');
                     // location.href = '/plugin-hp#price';
                 },
                 children: [
@@ -1151,7 +1151,7 @@ const schemes = {
                                         kind: 'a',
                                         target: '_blank',
                                         text: 'Terms of Service',
-                                        href: '/plugin-hp/termsofuse.txt',
+                                        href: '/wp/plugin-hp/termsofuse.txt',
                                         
                                     },
                                     {
@@ -1161,7 +1161,7 @@ const schemes = {
                                     {
                                         kind: 'a',
                                         text: 'Privacy Policy',
-                                        href: '/plugin-hp/privacy.txt',
+                                        href: '/wp/plugin-hp/privacy.txt',
                                         target: '_blank'
                                     }
                                 ]
@@ -1404,7 +1404,7 @@ const schemes = {
                                             {
                                                 kind: 'a',
                                                 text: 'Terms of Service',
-                                                href: '/plugin-hp/termsofuse.txt',
+                                                href: '/wp/termsofuse.txt',
                                                 target: '_blank'
                                             },
                                             {
@@ -1414,7 +1414,7 @@ const schemes = {
                                             {
                                                 kind: 'a',
                                                 text: 'Privacy Policy',
-                                                href: '/plugin-hp/privacy.txt',
+                                                href: '/wp/plugin-hp/privacy.txt',
                                                 target: '_blank'
                                             }
                                         ]
@@ -1507,7 +1507,7 @@ const schemes = {
                         text: 'Start with another account', // 다른계정으로 시작하기
                         onClick: e => { //로그아웃 : 계정삭제는 비밀번호 필요.
                             signOutAuth().then(function() {
-                                location.replace('/plugin-hp');
+                                location.replace('/wp/plugin-hp');
                             });
                         }
                     }
@@ -1669,7 +1669,7 @@ const myinfo = {
         children: [
             {
                 kind: 'a',
-                href: '/plugin-hp/subscription',
+                href: '/wp/plugin-hp/subscription',
                 // onClick: 'openSubscriptions',
                 children: [
                     {

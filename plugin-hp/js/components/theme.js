@@ -21,7 +21,6 @@ function theme(scheme) {
         el.children()[2].src = themes[i].img;
 
         getThemepkURL( url => { // 테마 패키지 파일 firestore에서 다운로드 링크 가져오기.
-            console.log(url)
             if(!url){ 
                 url = 'javascript:toastr.info("Theme packages are being prepared.")';
             }

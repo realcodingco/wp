@@ -18,7 +18,7 @@ isLogin(function(result) {
         });
     }
     else { //로그아웃시 메인페이지로 
-        location.href = '/plugin-hp';
+        location.href = '/wp/plugin-hp';
     }
 });
 

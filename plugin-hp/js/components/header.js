@@ -12,9 +12,9 @@ BX.regist('Header', compData);
 function header(scheme) {
     const b = BX.component(schemes.header);
     const ci = BX.component(schemes.ciBox).appendTo(b);
-    $(ci[0]).find('img')[0].src = '/plugin-hp/style/ic2.svg';
+    $(ci[0]).find('img')[0].src = '/wp/plugin-hp/style/ic2.svg';
 
-    ci[0].href = '/plugin-hp';
+    ci[0].href = '/wp/plugin-hp';
     const menuBox = BX.component(schemes.menuBox).appendTo(b);
     BX.component(schemes.hambugerIcon).appendTo(b);
     if(scheme) {
@@ -136,7 +136,7 @@ function signOut(e){
 
     BX.components.Popup.bx({text: 'Do you want to log out?', fn : e => {
         signOutAuth().then(function() {
-            location.replace('/plugin-hp');
+            location.replace('/wp/plugin-hp');
         });
     }}).appendTo(topBox);
 }

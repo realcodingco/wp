@@ -51,7 +51,7 @@ function savePayment(uid, sendData) { // 구독이 남아있는지 여부에 따
             localStorage.removeItem('paydata');
             // 3초 후, 구독페이지로 이동.
             setTimeout(()=> { 
-                location.href = '/plugin-hp/subscription';
+                location.href = '/wp/plugin-hp/subscription';
             }, 3000);
         });
     };

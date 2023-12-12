@@ -1,7 +1,7 @@
 //모든 페이지에서 공통으로 사용
-const DOMAIN = location.protocol + location.hostname + '/plugin-hp';
-
-//로딩애니메이션
+/**
+ * 로딩애니메이션
+ */
 BX.component(schemes.loading).appendTo(topBox);
 function showLoading(){
     $('.pageLoading').addClass('on');
@@ -37,7 +37,7 @@ function onGoogleAuth(e) {
     signinGoogle().then((result) => {
         toastr.success('Account logged in.');
         $('.signinDropdown').remove(); //로그인창 팝업 닫기
-        if(location.pathname == '/plugin-hp/' && window.innerWidth < 1040) { //모바일의 경우
+        if(location.pathname == '/wp/plugin-hp/' && window.innerWidth < 1040) { //모바일의 경우
             $('.menuTrigger')[0].click();
         }
     }).catch((error) => {

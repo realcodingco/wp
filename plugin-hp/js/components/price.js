@@ -24,11 +24,9 @@ function price(scheme) {
         
         el.find('.price').children()[1].textContent = scheme[type].price;
         // 플랜선택 buy now 버튼 클릭 : 결제 페이지로 이동
-        // $(el).find('.buy')[0].href = '/plugin-hp/pay?type=' + type;
         $(el).find('.buy')[0].onclick = e => { console.log('clicked')
             localStorage.setItem("pay_plan", type);
-            location.replace('/plugin-hp/pay?type=' + type);
-            // window.location.href = '/plugin-hp/pay?type=' + type;
+            location.replace('/wp/plugin-hp/pay?type=' + type);
         }
         $(el).find('.buy')[0].dataset.type = type;
     });
